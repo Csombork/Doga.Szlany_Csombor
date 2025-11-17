@@ -17,23 +17,74 @@ while (termeknev != termekek[termekindex])
 Console.WriteLine($"\nKiszerelése: {egysegek[termekindex]}");
 
 //2. Feladat
-int[] változás = new int[28];
+double[] változás = new double[28];
 
 int index = 0;
-int decemberi = 0;
-int novemberi = 0;
+double decemberi = 0;
+double novemberi = 0;
 
 while (index < december.Length - 1)
 {
     index++;
     decemberi = december[index];
     novemberi = november[index];
-    változás.Append((decemberi / novemberi - 1) * 100);
+    double hozzaad = (decemberi / novemberi - 1) * 100;
+    Console.Write((decemberi / novemberi - 1) * 100 + "; ");
+    változás.Append(hozzaad);
 }
+
+Console.WriteLine();
 
 for (int i = 0; i < változás.Length; i++)
 {
-    Console.Write(változás[i] + ";");
+    Console.Write(változás[i] + "; ");
 }
 
 // 3. Feladat
+
+double decössz = december.Sum();
+double novössz  = november.Sum();
+Console.WriteLine($"\nEnnyi a különbség: {decössz} {novössz}");
+
+double legnagydrág = 0;
+for (int i = 0; i < december.Length - 1; i++)
+{
+    double egy = december[i];
+    double kettő = december[i + 1];
+    if (kettő - egy > legnagydrág)
+    {
+        legnagydrág = kettő - egy;
+    }
+    egy = november[i];
+    kettő = november[i + 1];
+    if (kettő - egy > legnagydrág)
+    {
+        legnagydrág = kettő - egy;
+    }
+}
+Console.WriteLine($"Legnagyobb drágulás: {legnagydrág}");
+
+double legnagyáres = 0;
+for (int i = 0; i < december.Length - 1; i++)
+{
+    double egy = december[i];
+    double kettő = december[i + 1];
+    if (egy - kettő > legnagyáres)
+    {
+        legnagyáres = egy - kettő;
+    }
+    egy = november[i];
+    kettő = november[i + 1];
+    if (egy - kettő > legnagyáres)
+    {
+        legnagyáres = egy - kettő;
+    }
+}
+Console.WriteLine($"Legnagyobb áresés: {legnagyáres}");
+
+// 4. Feladat
+double[] tisztított = new double[28];
+foreach (var item in args)
+{
+    
+}
