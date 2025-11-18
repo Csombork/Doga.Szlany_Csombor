@@ -41,12 +41,9 @@ foreach (var item in változás)
 
 
 // 3. Feladat
+Console.WriteLine($"\nEnnyi a különbség: {december.Sum()} {november.Sum()}");
 
-double decössz = december.Sum();
-double novössz  = november.Sum();
-Console.WriteLine($"\nEnnyi a különbség: {decössz} {novössz}");
-
-double legnagydrág = 0;
+/*double legnagydrág = 0;
 for (int i = 0; i < december.Length - 1; i++)
 {
     double egy = december[i];
@@ -61,10 +58,10 @@ for (int i = 0; i < december.Length - 1; i++)
     {
         legnagydrág = kettő - egy;
     }
-}
+}*/
 Console.WriteLine($"Legnagyobb drágulás: {változás.Max()}%");
 
-double legnagyáres = 0;
+/*double legnagyáres = 0;
 for (int i = 0; i < december.Length - 1; i++)
 {
     double egy = december[i];
@@ -79,7 +76,7 @@ for (int i = 0; i < december.Length - 1; i++)
     {
         legnagyáres = egy - kettő;
     }
-}
+}*/
 Console.WriteLine($"Legnagyobb áresés: {változás.Min()}%");
 
 // 4. Feladat
