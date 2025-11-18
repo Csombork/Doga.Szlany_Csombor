@@ -17,7 +17,7 @@ while (termeknev != termekek[termekindex])
 Console.WriteLine($"\nKiszerelése: {egysegek[termekindex]}");
 
 //2. Feladat
-double[] változás = new double[28];
+double[] változás = new double[december.Length];
 
 int index = 0;
 double decemberi = 0;
@@ -29,16 +29,16 @@ while (index < december.Length - 1)
     decemberi = december[index];
     novemberi = november[index];
     double hozzaad = (decemberi / novemberi - 1) * 100;
-    Console.Write((decemberi / novemberi - 1) * 100 + "; ");
-    változás.Append(hozzaad);
+    változás[index] = Math.Round(hozzaad, 2);
 }
 
 Console.WriteLine();
 
-for (int i = 0; i < változás.Length; i++)
+foreach (var item in változás)
 {
-    Console.Write(változás[i] + "; ");
+    Console.Write(item + "; ");
 }
+
 
 // 3. Feladat
 
