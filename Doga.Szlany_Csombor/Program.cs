@@ -62,7 +62,7 @@ for (int i = 0; i < december.Length - 1; i++)
         legnagydrág = kettő - egy;
     }
 }
-Console.WriteLine($"Legnagyobb drágulás: {legnagydrág}Ft");
+Console.WriteLine($"Legnagyobb drágulás: {változás.Max()}%");
 
 double legnagyáres = 0;
 for (int i = 0; i < december.Length - 1; i++)
@@ -80,11 +80,21 @@ for (int i = 0; i < december.Length - 1; i++)
         legnagyáres = egy - kettő;
     }
 }
-Console.WriteLine($"Legnagyobb áresés: {legnagyáres}Ft");
+Console.WriteLine($"Legnagyobb áresés: {változás.Min()}%");
 
 // 4. Feladat
-double[] tisztított = new double[28];
-foreach (var item in args)
+double[] tisztított = new double[változás.Length];
+int szamol = 0;
+foreach (var item in változás)
 {
-    
+    if (item is < 30 and > -30) // vagy ---> item < 30 && item > -30
+    {
+        tisztított[szamol] = item;
+        szamol++;
+    }
+}
+
+for (int i = 0; i < tisztított.Length; i++)
+{
+    Console.Write(tisztított[i] + "; ");
 }
